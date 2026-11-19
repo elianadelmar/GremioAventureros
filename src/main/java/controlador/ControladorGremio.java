@@ -1,7 +1,12 @@
 package controlador;
 
+import com.mycompany.gremioaventureros.GremioAventureros;
 import java.util.ArrayList;
 import java.util.List;
+import javax.swing.JComboBox;
+import javax.swing.JFrame;
+import javax.swing.JOptionPane;
+import javax.swing.JTextField;
 import modelo.ArchivoGremio;
 import modelo.Aventurero;
 import modelo.Combate;
@@ -10,19 +15,19 @@ import modelo.FabricaAventureros;
 import modelo.Monstruo;
 import modelo.Multiclase;
 import modelo.ValidadorAventurero;
-import javax.swing.JOptionPane;
 import vista.VentanaInicio;
+import vista.VentanaRegistro;
 
 /**
  * Controlador: conecta las vistas con el modelo.
- * Guarda a TODOS los aventureros en una unica coleccion (RNF2).
- *
- * (En la noche le agregamos las ventanas y los eventos de los botones.)
+ * - Guarda a TODOS los aventureros en una unica coleccion (RNF2).
+ * - Escucha los botones de las vistas (las vistas no tienen logica).
  */
 public class ControladorGremio {
 
     public static final int ETAPA_FINAL = 3;
     public static final int ETAPA_SECRETA = 4;
+    private static final String NINGUNA = "Ninguna";
 
     private final ArrayList<Aventurero> gremio = new ArrayList<>();
     private final ArchivoGremio archivo;
@@ -32,6 +37,7 @@ public class ControladorGremio {
 
     // ---------------- Vistas ----------------
     private VentanaInicio vInicio;
+    private VentanaRegistro vRegistro;
 
     public ControladorGremio() {
         this(new ArchivoGremio());
@@ -41,28 +47,132 @@ public class ControladorGremio {
         this.archivo = archivo;
     }
 
-    /** Abre la pantalla de inicio y conecta sus botones (enlazamiento de eventos en el controlador). */
+    // =====================================================================
+    //  ENLAZAMIENTO DE EVENTOS (las vistas solo prestan sus componentes)
+    // =====================================================================
+
+    /** Crea las pantallas, conecta sus botones y muestra el inicio. */
     public void iniciar() {
         cargarGremio();
         vInicio = new VentanaInicio();
+        vRegistro = new VentanaRegistro();
+
+        // Inicio
         vInicio.getBtnRegistrar().addActionListener(e -> abrirRegistro());
         vInicio.getBtnVerGremio().addActionListener(e -> abrirGremio());
-        vInicio.getBtnCampania().addActionListener(e -> abrirCampania());
-        vInicio.setLocationRelativeTo(null);   // centrada en la pantalla
-        vInicio.setVisible(true);
+        vInicio.getBtnCampania().addActionListener(e -> abrirGremio());
+
+        // Registro
+        JComboBox<?>[] combos = vRegistro.getCmbClases();
+        for (int i = 0; i < combos.length; i++) {
+            final int fila = i;
+            combos[i].addActionListener(e -> actualizarFilaClase(fila));
+        }
+        vRegistro.getBtnGuardar().addActionListener(e -> guardarRegistro());
+        vRegistro.getBtnVolver().addActionListener(e -> mostrar(vInicio));
+
+        mostrar(vInicio);
     }
+
+    /** Muestra una pantalla y esconde las demas. */
+    private void mostrar(JFrame ventana) {
+        for (JFrame v : new JFrame[]{vInicio, vRegistro}) {
+            if (v != ventana) {
+                v.setVisible(false);
+            }
+        }
+        ventana.setLocationRelativeTo(null);
+        ventana.setVisible(true);
+    }
+
+    // =====================================================================
+    //  PANTALLA DE REGISTRO (RF1)
+    // =====================================================================
 
     private void abrirRegistro() {
-        JOptionPane.showMessageDialog(vInicio, "Pantalla de registro en construcción...");
+        limpiarRegistro();
+        mostrar(vRegistro);
     }
+
+    private void limpiarRegistro() {
+        vRegistro.getTxtNombre().setText("");
+        vRegistro.getTxtPuntosVida().setText("");
+        vRegistro.getCmbGenero().setSelectedIndex(0);
+        JComboBox<?>[] combos = vRegistro.getCmbClases();
+        for (int i = 0; i < combos.length; i++) {
+            combos[i].setSelectedIndex(i == 0 ? 1 : 0);   // fila 1 arranca en Guerrero
+            vRegistro.getTxtNiveles()[i].setText("");
+            vRegistro.getTxtAtributos()[i].setText("");
+            actualizarFilaClase(i);
+        }
+    }
+
+    /** Cambia la etiqueta del atributo segun la clase elegida y activa/desactiva la fila. */
+    private void actualizarFilaClase(int fila) {
+        String clase = String.valueOf(vRegistro.getCmbClases()[fila].getSelectedItem());
+        boolean activa = !NINGUNA.equals(clase);
+        JTextField nivel = vRegistro.getTxtNiveles()[fila];
+        JTextField atributo = vRegistro.getTxtAtributos()[fila];
+        nivel.setEnabled(activa);
+        atributo.setEnabled(activa);
+        if (!activa) {
+            nivel.setText("");
+            atributo.setText("");
+            vRegistro.getLblAtributos()[fila].setText("-");
+            return;
+        }
+        String texto = FabricaAventureros.nombreAtributo(clase);
+        if (FabricaAventureros.atributoEsSiNo(clase)) {
+            texto += " (Sí/No)";
+        }
+        vRegistro.getLblAtributos()[fila].setText(texto);
+    }
+
+    private void guardarRegistro() {
+        List<String> clases = new ArrayList<>();
+        List<String> niveles = new ArrayList<>();
+        List<String> atributos = new ArrayList<>();
+        for (int i = 0; i < vRegistro.getCmbClases().length; i++) {
+            String clase = String.valueOf(vRegistro.getCmbClases()[i].getSelectedItem());
+            if (!NINGUNA.equals(clase)) {
+                clases.add(clase);
+                niveles.add(vRegistro.getTxtNiveles()[i].getText());
+                atributos.add(vRegistro.getTxtAtributos()[i].getText());
+            }
+        }
+        try {
+            Aventurero nuevo = registrarAventurero(
+                    vRegistro.getTxtNombre().getText(),
+                    String.valueOf(vRegistro.getCmbGenero().getSelectedItem()),
+                    vRegistro.getTxtPuntosVida().getText(),
+                    clases, niveles, atributos);
+            String extra = nuevo.esLeyenda() ? "\n\n¡¡Es una LEYENDA DEL GREMIO!!" : "";
+            JOptionPane.showMessageDialog(vRegistro, "¡" + nuevo.getNombre() + " se unió al gremio!\n"
+                    + nuevo.getClase() + " - Nivel " + nuevo.getNivel() + extra,
+                    "Registro exitoso", JOptionPane.INFORMATION_MESSAGE);
+            limpiarRegistro();
+        } catch (DatosInvalidosException ex) {
+            JOptionPane.showMessageDialog(vRegistro, ex.getMessage(), "Datos inválidos", JOptionPane.ERROR_MESSAGE);
+        }
+    }
+
+    // =====================================================================
+    //  PANTALLA DEL GREMIO (RF2) - temporal hasta disenar la ventana
+    // =====================================================================
 
     private void abrirGremio() {
-        JOptionPane.showMessageDialog(vInicio, "El gremio tiene " + gremio.size() + " aventurero(s).");
+        StringBuilder sb = new StringBuilder("Aventureros del gremio:\n\n");
+        for (Aventurero a : gremio) {
+            sb.append(a).append("\n");
+        }
+        sb.append("\n").append(GremioAventureros.reporteCantidadPorClase(gremio))
+          .append("\n").append(GremioAventureros.reporteMayorNivel(gremio));
+        JOptionPane.showMessageDialog(vInicio, sb.toString(), "Gremio", JOptionPane.INFORMATION_MESSAGE);
     }
 
-    private void abrirCampania() {
-        JOptionPane.showMessageDialog(vInicio, "Pantalla de campaña en construcción...");
-    }
+    // =====================================================================
+    //  LOGICA (usa el modelo)
+    // =====================================================================
 
     /** Carga los aventureros guardados en registro_gremio.txt */
     public void cargarGremio() {
@@ -109,21 +219,29 @@ public class ControladorGremio {
         return nuevo;
     }
 
-    /** Empieza la campana con los aventureros elegidos: etapa 1 = Goblin. */
+    // SOBRECARGA: por defecto la campana empieza en el Goblin
     public List<String> iniciarCampania(List<Aventurero> elegidos) throws DatosInvalidosException {
+        return iniciarCampania(elegidos, 1);
+    }
+
+    /** Empieza la campana con los aventureros elegidos desde la etapa indicada (1 Goblin, 2 Ogro, 3 Dragon). */
+    public List<String> iniciarCampania(List<Aventurero> elegidos, int etapaInicial) throws DatosInvalidosException {
         if (elegidos == null || elegidos.isEmpty() || elegidos.size() > 4) {
             throw new DatosInvalidosException("Debe elegir entre 1 y 4 aventureros para el combate.");
+        }
+        if (etapaInicial < 1 || etapaInicial > ETAPA_FINAL) {
+            throw new DatosInvalidosException("Debe elegir un monstruo válido.");
         }
         grupoCombate = new ArrayList<>(elegidos);
         for (Aventurero a : grupoCombate) {
             a.descansoLargo();
         }
-        etapa = 1;
+        etapa = etapaInicial;
         combate = new Combate(grupoCombate, Monstruo.crearPorEtapa(etapa));
         return combate.iniciar();
     }
 
-    /** Ejecuta la siguiente ronda. Al terminar el combate lo guarda en el archivo. */
+    /** Ejecuta la siguiente ronda. Al terminar el combate lo guarda en el archivo (RF4). */
     public List<String> siguienteRonda() {
         List<String> lineas = combate.ejecutarRonda();
         if (combate.terminado()) {
@@ -160,6 +278,7 @@ public class ControladorGremio {
     public List<String> avanzarEtapa() {
         List<String> lineas = new ArrayList<>();
         etapa++;
+        lineas.add("");
         lineas.add("Descanso corto: el grupo recupera la mitad de su vida.");
         for (Aventurero a : grupoCombate) {
             a.descansoCorto();
