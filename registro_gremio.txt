@@ -1,0 +1,443 @@
+AVENTURERO|2026-11-18 23:58:41|Multiclase;eli;Mujer;30;Guerrero-5-true,Monje-3-3
+AVENTURERO|2026-11-19 02:02:28|Multiclase;juancito;Hombre;40;Guerrero-5-false,Pícaro-5-true,Mago-5-2,Bardo-5-piano
+AVENTURERO|2026-11-19 02:03:26|Multiclase;khufus;Hombre;80;Guerrero-5-true,Paladín-5-5,Mago-5-3,Explorador-5-tierra
+AVENTURERO|2026-11-19 02:04:28|Multiclase;paolo;Hombre;100;Guerrero-5-false,Monje-5-3,Clérigo-5-dios,Paladín-5-3
+AVENTURERO|2026-11-19 02:05:29|Multiclase;aa;Mujer;180;Explorador-5-gay,Paladín-5-5,Guerrero-5-false,Pícaro-5-true
+COMBATE|2026-11-19 02:06:47|Goblin|VICTORIA
+    ¡Comienza el combate contra Goblin!
+    Iniciativa (1d20): juancito 5, khufus 8, paolo 10, aa 2, Goblin 21
+    ¡Goblin inicia el combate!
+    ----- Ronda 1 -----
+    Turno de Goblin:
+      Goblin usa Cimitarra contra paolo: d20(9) + 4 = 13 vs CA 18 -> Falla.
+    [paolo actúa como Guerrero]
+    El Guerrero paolo usa Oleada de Acción para realizar múltiples ataques físicos continuos.
+      paolo ataca con espada larga: d20(9) + 9 = 18 vs CA 15 -> ¡Acierta! 8 de daño.
+    ¡VICTORIA! Goblin ha sido derrotado.
+COMBATE|2026-11-19 02:06:55|Ogro|VICTORIA
+    ¡Comienza el combate contra Ogro!
+    Iniciativa (1d20): juancito 3, khufus 6, paolo 9, aa 7, Ogro 13
+    ¡Ogro inicia el combate!
+    ----- Ronda 1 -----
+    Turno de Ogro:
+      Ogro usa Gran garrote contra paolo: d20(3) + 6 = 9 vs CA 18 -> Falla.
+    [paolo actúa como Monje]
+    El Monje paolo gasta puntos de Ki para ejecutar una Ráfaga de Golpes y un Ataque Aturdidor. (Ki restante: 2)
+      paolo ataca con golpe sin armas: d20(20) + 9 = 29 vs CA 11 -> ¡CRÍTICO! 8 de daño.
+      paolo ataca con golpe sin armas: d20(7) + 9 = 16 vs CA 11 -> ¡Acierta! 9 de daño.
+      paolo ataca con golpe sin armas: d20(10) + 9 = 19 vs CA 11 -> ¡Acierta! 5 de daño.
+      paolo ataca con golpe sin armas: d20(10) + 9 = 19 vs CA 11 -> ¡Acierta! 8 de daño.
+    [aa actúa como Explorador]
+    El Explorador aa aplica Marca del Cazador sobre el objetivo para maximizar su daño sostenido.
+      aa ataca con arco largo: d20(19) + 9 = 28 vs CA 11 -> ¡Acierta! 14 de daño.
+      aa ataca con arco largo: d20(19) + 9 = 28 vs CA 11 -> ¡Acierta! 5 de daño.
+    [khufus actúa como Guerrero]
+    El Guerrero khufus usa Oleada de Acción para realizar múltiples ataques físicos continuos.
+      khufus ataca con espada larga: d20(20) + 9 = 29 vs CA 11 -> ¡CRÍTICO! 18 de daño.
+    ¡VICTORIA! Ogro ha sido derrotado.
+COMBATE|2026-11-19 02:07:06|Dragón Rojo Joven|DERROTA
+    ¡Comienza el combate contra Dragón Rojo Joven!
+    Iniciativa (1d20): juancito 18, khufus 1, paolo 3, aa 9, Dragón Rojo Joven 15
+    ¡juancito inicia el combate!
+    ----- Ronda 1 -----
+    [juancito actúa como Guerrero]
+    El Guerrero juancito usa Oleada de Acción para realizar múltiples ataques físicos continuos.
+      juancito ataca con espada larga: d20(14) + 9 = 23 vs CA 18 -> ¡Acierta! 4 de daño.
+      juancito ataca con espada larga: d20(7) + 9 = 16 vs CA 18 -> Falla.
+      juancito ataca con espada larga: d20(2) + 9 = 11 vs CA 18 -> Falla.
+      juancito ataca con espada larga: d20(14) + 9 = 23 vs CA 18 -> ¡Acierta! 4 de daño.
+    Turno de Dragón Rojo Joven:
+      ¡Dragón Rojo Joven exhala un cono de fuego sobre todo el grupo!
+      juancito falla la salvación y recibe 45 de daño. ¡Ha caído!
+      khufus falla la salvación y recibe 57 de daño.
+      paolo falla la salvación y recibe 52 de daño.
+      aa salva a medias y recibe 31 de daño.
+    [aa actúa como Paladín]
+    El Paladín aa carga con su espada larga.
+      aa ataca con espada larga: d20(15) + 9 = 24 vs CA 18 -> ¡Acierta! 7 de daño.
+    El Paladín aa consume magia para imbuir su arma con un Castigo Divino de daño radiante.
+      +9 de daño radiante.
+      aa ataca con espada larga: d20(11) + 9 = 20 vs CA 18 -> ¡Acierta! 10 de daño.
+    [paolo actúa como Clérigo]
+    El Clérigo paolo usa Canalizar Divinidad para curar a sus aliados y expulsar muertos vivientes.
+      khufus recupera 17 PV gracias a dios.
+      paolo recupera 2 PV gracias a dios.
+    [khufus actúa como Paladín]
+    El Paladín khufus carga con su espada larga.
+      khufus ataca con espada larga: d20(10) + 9 = 19 vs CA 18 -> ¡Acierta! 6 de daño.
+    El Paladín khufus consume magia para imbuir su arma con un Castigo Divino de daño radiante.
+      +15 de daño radiante.
+      khufus ataca con espada larga: d20(7) + 9 = 16 vs CA 18 -> Falla.
+    ----- Ronda 2 -----
+    Turno de Dragón Rojo Joven:
+      (Sacó 5 en el d6: ¡su Aliento de Fuego se recargó!)
+      ¡Dragón Rojo Joven exhala un cono de fuego sobre todo el grupo!
+      khufus falla la salvación y recibe 47 de daño. ¡Ha caído!
+      paolo falla la salvación y recibe 48 de daño.
+      aa salva a medias y recibe 25 de daño.
+    [aa actúa como Guerrero]
+    El Guerrero aa usa Oleada de Acción para realizar múltiples ataques físicos continuos.
+      aa ataca con espada larga: d20(16) + 9 = 25 vs CA 18 -> ¡Acierta! 8 de daño.
+      aa ataca con espada larga: d20(3) + 9 = 12 vs CA 18 -> Falla.
+      aa ataca con espada larga: d20(10) + 9 = 19 vs CA 18 -> ¡Acierta! 9 de daño.
+      aa ataca con espada larga: d20(10) + 9 = 19 vs CA 18 -> ¡Acierta! 11 de daño.
+    [paolo actúa como Paladín]
+    El Paladín paolo carga con su espada larga.
+      paolo ataca con espada larga: d20(7) + 9 = 16 vs CA 18 -> Falla.
+      paolo ataca con espada larga: d20(12) + 9 = 21 vs CA 18 -> ¡Acierta! 4 de daño.
+    El Paladín paolo consume magia para imbuir su arma con un Castigo Divino de daño radiante.
+      +16 de daño radiante.
+    ----- Ronda 3 -----
+    Turno de Dragón Rojo Joven:
+      (Sacó 6 en el d6: ¡su Aliento de Fuego se recargó!)
+      ¡Dragón Rojo Joven exhala un cono de fuego sobre todo el grupo!
+      paolo falla la salvación y recibe 60 de daño. ¡Ha caído!
+      aa falla la salvación y recibe 55 de daño.
+    [aa actúa como Pícaro]
+    El Pícaro aa aprovecha la ventaja táctica para asestar un Ataque Furtivo masivo y se reposiciona.
+      aa ataca con estoque: d20(16) con ventaja + 9 = 25 vs CA 18 -> ¡Acierta! 15 de daño.
+    ----- Ronda 4 -----
+    Turno de Dragón Rojo Joven:
+      Dragón Rojo Joven usa Mordisco contra aa: d20(13) + 10 = 23 vs CA 18 -> ¡Impacta! 23 de daño.
+      Dragón Rojo Joven usa Garra contra aa: d20(8) + 10 = 18 vs CA 18 -> ¡Impacta! 13 de daño.
+      Dragón Rojo Joven usa Garra contra aa: d20(6) + 10 = 16 vs CA 18 -> Falla.
+    [aa actúa como Explorador]
+    El Explorador aa dispara su arco largo a la presa marcada.
+      aa ataca con arco largo: d20(3) + 9 = 12 vs CA 18 -> Falla.
+      aa ataca con arco largo: d20(20) + 9 = 29 vs CA 18 -> ¡CRÍTICO! 20 de daño.
+    ----- Ronda 5 -----
+    Turno de Dragón Rojo Joven:
+      (Sacó 6 en el d6: ¡su Aliento de Fuego se recargó!)
+      ¡Dragón Rojo Joven exhala un cono de fuego sobre todo el grupo!
+      aa falla la salvación y recibe 59 de daño. ¡Ha caído!
+    DERROTA... todo el grupo ha caído ante Dragón Rojo Joven.
+COMBATE|2026-11-19 02:10:14|Goblin|VICTORIA
+    ¡Comienza el combate contra Goblin!
+    Iniciativa (1d20): juancito 12, khufus 14, paolo 20, aa 20, Goblin 12
+    ¡paolo inicia el combate!
+    ----- Ronda 1 -----
+    [paolo actúa como Guerrero]
+    El Guerrero paolo usa Oleada de Acción para realizar múltiples ataques físicos continuos.
+      paolo ataca con espada larga: d20(12) + 9 = 21 vs CA 15 -> ¡Acierta! 11 de daño.
+    ¡VICTORIA! Goblin ha sido derrotado.
+COMBATE|2026-11-19 02:10:21|Ogro|VICTORIA
+    ¡Comienza el combate contra Ogro!
+    Iniciativa (1d20): juancito 19, khufus 4, paolo 16, aa 7, Ogro 10
+    ¡juancito inicia el combate!
+    ----- Ronda 1 -----
+    [juancito actúa como Guerrero]
+    El Guerrero juancito usa Oleada de Acción para realizar múltiples ataques físicos continuos.
+      juancito ataca con espada larga: d20(12) + 9 = 21 vs CA 11 -> ¡Acierta! 4 de daño.
+      juancito ataca con espada larga: d20(5) + 9 = 14 vs CA 11 -> ¡Acierta! 8 de daño.
+      juancito ataca con espada larga: d20(11) + 9 = 20 vs CA 11 -> ¡Acierta! 7 de daño.
+      juancito ataca con espada larga: d20(5) + 9 = 14 vs CA 11 -> ¡Acierta! 4 de daño.
+    [paolo actúa como Monje]
+    El Monje paolo gasta puntos de Ki para ejecutar una Ráfaga de Golpes y un Ataque Aturdidor. (Ki restante: 2)
+      paolo ataca con golpe sin armas: d20(10) + 9 = 19 vs CA 11 -> ¡Acierta! 7 de daño.
+      paolo ataca con golpe sin armas: d20(14) + 9 = 23 vs CA 11 -> ¡Acierta! 7 de daño.
+      paolo ataca con golpe sin armas: d20(5) + 9 = 14 vs CA 11 -> ¡Acierta! 8 de daño.
+      paolo ataca con golpe sin armas: d20(7) + 9 = 16 vs CA 11 -> ¡Acierta! 5 de daño.
+    Turno de Ogro:
+      Ogro usa Gran garrote contra aa: d20(9) + 6 = 15 vs CA 18 -> Falla.
+    [aa actúa como Explorador]
+    El Explorador aa aplica Marca del Cazador sobre el objetivo para maximizar su daño sostenido.
+      aa ataca con arco largo: d20(19) + 9 = 28 vs CA 11 -> ¡Acierta! 8 de daño.
+      aa ataca con arco largo: d20(18) + 9 = 27 vs CA 11 -> ¡Acierta! 13 de daño.
+    ¡VICTORIA! Ogro ha sido derrotado.
+COMBATE|2026-11-19 02:10:29|Dragón Rojo Joven|VICTORIA
+    ¡Comienza el combate contra Dragón Rojo Joven!
+    Iniciativa (1d20): juancito 16, khufus 20, paolo 2, aa 16, Dragón Rojo Joven 14
+    ¡khufus inicia el combate!
+    ----- Ronda 1 -----
+    [khufus actúa como Guerrero]
+    El Guerrero khufus usa Oleada de Acción para realizar múltiples ataques físicos continuos.
+      khufus ataca con espada larga: d20(16) + 9 = 25 vs CA 18 -> ¡Acierta! 9 de daño.
+      khufus ataca con espada larga: d20(11) + 9 = 20 vs CA 18 -> ¡Acierta! 8 de daño.
+      khufus ataca con espada larga: d20(1) + 9 = 10 vs CA 18 -> ¡Pifia! Falla automáticamente.
+      khufus ataca con espada larga: d20(9) + 9 = 18 vs CA 18 -> ¡Acierta! 10 de daño.
+    [juancito actúa como Pícaro]
+    El Pícaro juancito aprovecha la ventaja táctica para asestar un Ataque Furtivo masivo y se reposiciona.
+      juancito ataca con estoque: d20(18) con ventaja + 9 = 27 vs CA 18 -> ¡Acierta! 13 de daño.
+    [aa actúa como Paladín]
+    El Paladín aa carga con su espada larga.
+      aa ataca con espada larga: d20(17) + 9 = 26 vs CA 18 -> ¡Acierta! 10 de daño.
+    El Paladín aa consume magia para imbuir su arma con un Castigo Divino de daño radiante.
+      +11 de daño radiante.
+      aa ataca con espada larga: d20(19) + 9 = 28 vs CA 18 -> ¡Acierta! 5 de daño.
+    Turno de Dragón Rojo Joven:
+      ¡Dragón Rojo Joven exhala un cono de fuego sobre todo el grupo!
+      juancito falla la salvación y recibe 43 de daño. ¡Ha caído!
+      khufus falla la salvación y recibe 64 de daño.
+      paolo salva a medias y recibe 22 de daño.
+      aa falla la salvación y recibe 54 de daño.
+    [paolo actúa como Clérigo]
+    El Clérigo paolo usa Canalizar Divinidad para curar a sus aliados y expulsar muertos vivientes.
+      khufus recupera 24 PV gracias a dios.
+    ----- Ronda 2 -----
+    [khufus actúa como Paladín]
+    El Paladín khufus carga con su espada larga.
+      khufus ataca con espada larga: d20(1) + 9 = 10 vs CA 18 -> ¡Pifia! Falla automáticamente.
+      khufus ataca con espada larga: d20(13) + 9 = 22 vs CA 18 -> ¡Acierta! 4 de daño.
+    El Paladín khufus consume magia para imbuir su arma con un Castigo Divino de daño radiante.
+      +4 de daño radiante.
+    [aa actúa como Guerrero]
+    El Guerrero aa usa Oleada de Acción para realizar múltiples ataques físicos continuos.
+      aa ataca con espada larga: d20(20) + 9 = 29 vs CA 18 -> ¡CRÍTICO! 12 de daño.
+      aa ataca con espada larga: d20(17) + 9 = 26 vs CA 18 -> ¡Acierta! 10 de daño.
+      aa ataca con espada larga: d20(20) + 9 = 29 vs CA 18 -> ¡CRÍTICO! 6 de daño.
+      aa ataca con espada larga: d20(18) + 9 = 27 vs CA 18 -> ¡Acierta! 4 de daño.
+    Turno de Dragón Rojo Joven:
+      (Sacó 5 en el d6: ¡su Aliento de Fuego se recargó!)
+      ¡Dragón Rojo Joven exhala un cono de fuego sobre todo el grupo!
+      khufus salva a medias y recibe 29 de daño.
+      paolo salva a medias y recibe 32 de daño.
+      aa falla la salvación y recibe 50 de daño.
+    [paolo actúa como Paladín]
+    El Paladín paolo carga con su espada larga.
+      paolo ataca con espada larga: d20(10) + 9 = 19 vs CA 18 -> ¡Acierta! 11 de daño.
+    El Paladín paolo consume magia para imbuir su arma con un Castigo Divino de daño radiante.
+      +16 de daño radiante.
+      paolo ataca con espada larga: d20(12) + 9 = 21 vs CA 18 -> ¡Acierta! 7 de daño.
+    ----- Ronda 3 -----
+    [khufus actúa como Mago]
+    El Mago khufus sabe que Dragón Rojo Joven es inmune al fuego: gasta un espacio de conjuro para lanzar un poderoso Relámpago.
+      Dragón Rojo Joven pasa la salvación (CD 17) y recibe 13 de daño. Espacios restantes: 2
+    [aa actúa como Pícaro]
+    El Pícaro aa aprovecha la ventaja táctica para asestar un Ataque Furtivo masivo y se reposiciona.
+      aa ataca con estoque: d20(20) con ventaja + 9 = 29 vs CA 18 -> ¡CRÍTICO! 33 de daño.
+    ¡VICTORIA! Dragón Rojo Joven ha sido derrotado.
+COMBATE|2026-11-19 02:10:39|Tarrasca|DERROTA
+    ¡Comienza el combate contra Tarrasca!
+    Iniciativa (1d20): juancito 15, khufus 18, paolo 4, aa 9, Tarrasca 2
+    ¡khufus inicia el combate!
+    ----- Ronda 1 -----
+    [khufus actúa como Explorador]
+    El Explorador khufus aplica Marca del Cazador sobre el objetivo para maximizar su daño sostenido.
+      khufus ataca con arco largo: d20(13) + 9 = 22 vs CA 25 -> Falla.
+      khufus ataca con arco largo: d20(4) + 9 = 13 vs CA 25 -> Falla.
+    [juancito actúa como Mago]
+    El Mago juancito sabe que Tarrasca es inmune al fuego: gasta un espacio de conjuro para lanzar un poderoso Relámpago.
+      Tarrasca falla la salvación (CD 17) y recibe 27 de daño. Espacios restantes: 1
+    [aa actúa como Explorador]
+    El Explorador aa dispara su arco largo a la presa marcada.
+      aa ataca con arco largo: d20(4) + 9 = 13 vs CA 25 -> Falla.
+      aa ataca con arco largo: d20(13) + 9 = 22 vs CA 25 -> Falla.
+    [paolo actúa como Guerrero]
+    El Guerrero paolo ataca con su espada larga.
+      paolo ataca con espada larga: d20(18) + 9 = 27 vs CA 25 -> ¡Acierta! 3 de daño.
+      paolo ataca con espada larga: d20(20) + 9 = 29 vs CA 25 -> ¡CRÍTICO! 5 de daño.
+    Turno de Tarrasca:
+      Tarrasca usa Garra contra aa: d20(17) + 19 = 36 vs CA 18 -> ¡Impacta! 19 de daño.
+      Tarrasca usa Mordisco contra paolo: d20(10) + 19 = 29 vs CA 18 -> ¡Impacta! 31 de daño.
+    ----- Ronda 2 -----
+    [khufus actúa como Guerrero]
+    El Guerrero khufus ataca con su espada larga.
+      khufus ataca con espada larga: d20(9) + 9 = 18 vs CA 25 -> Falla.
+      khufus ataca con espada larga: d20(14) + 9 = 23 vs CA 25 -> Falla.
+    [juancito actúa como Bardo]
+    El Bardo juancito toca su instrumento para otorgar Inspiración Bárdica a un aliado.
+      aa recibe un d8 de Inspiración para su próximo ataque.
+      juancito ataca con estoque: d20(10) + 9 = 19 vs CA 25 -> Falla.
+    [aa actúa como Paladín]
+    El Paladín aa carga con su espada larga.
+      aa ataca con espada larga: d20(18) + 12 [Inspiración +3] = 30 vs CA 25 -> ¡Acierta! 3 de daño.
+    El Paladín aa consume magia para imbuir su arma con un Castigo Divino de daño radiante.
+      +11 de daño radiante.
+      aa ataca con espada larga: d20(6) + 9 = 15 vs CA 25 -> Falla.
+    [paolo actúa como Monje]
+    El Monje paolo gasta puntos de Ki para ejecutar una Ráfaga de Golpes y un Ataque Aturdidor. (Ki restante: 1)
+      paolo ataca con golpe sin armas: d20(5) + 9 = 14 vs CA 25 -> Falla.
+      paolo ataca con golpe sin armas: d20(1) + 9 = 10 vs CA 25 -> ¡Pifia! Falla automáticamente.
+      paolo ataca con golpe sin armas: d20(4) + 9 = 13 vs CA 25 -> Falla.
+      paolo ataca con golpe sin armas: d20(8) + 9 = 17 vs CA 25 -> Falla.
+    Turno de Tarrasca:
+      Tarrasca usa Cola contra juancito: d20(4) + 19 = 23 vs CA 14 -> ¡Impacta! 26 de daño.
+      juancito ha caído.
+      Tarrasca usa Cola contra paolo: d20(12) + 19 = 31 vs CA 18 -> ¡Impacta! 24 de daño.
+    ----- Ronda 3 -----
+    [khufus actúa como Paladín]
+    El Paladín khufus carga con su espada larga.
+      khufus ataca con espada larga: d20(2) + 9 = 11 vs CA 25 -> Falla.
+      khufus ataca con espada larga: d20(5) + 9 = 14 vs CA 25 -> Falla.
+    [aa actúa como Guerrero]
+    El Guerrero aa ataca con su espada larga.
+      aa ataca con espada larga: d20(18) + 9 = 27 vs CA 25 -> ¡Acierta! 4 de daño.
+      aa ataca con espada larga: d20(8) + 9 = 17 vs CA 25 -> Falla.
+    [paolo actúa como Clérigo]
+    El Clérigo paolo golpea con su maza bendecida por dios.
+      paolo ataca con maza: d20(1) + 9 = 10 vs CA 25 -> ¡Pifia! Falla automáticamente.
+    Turno de Tarrasca:
+      Tarrasca usa Cuernos contra aa: d20(6) + 19 = 25 vs CA 18 -> ¡Impacta! 37 de daño.
+      Tarrasca usa Cuernos contra aa: d20(10) + 19 = 29 vs CA 18 -> ¡Impacta! 34 de daño.
+    ----- Ronda 4 -----
+    [khufus actúa como Mago]
+    El Mago khufus sabe que Tarrasca es inmune al fuego: gasta un espacio de conjuro para lanzar un poderoso Relámpago.
+      Tarrasca falla la salvación (CD 17) y recibe 19 de daño. Espacios restantes: 1
+    [aa actúa como Pícaro]
+    El Pícaro aa aprovecha la ventaja táctica para asestar un Ataque Furtivo masivo y se reposiciona.
+      aa ataca con estoque: d20(20) con ventaja + 9 = 29 vs CA 25 -> ¡CRÍTICO! 18 de daño.
+    [paolo actúa como Paladín]
+    El Paladín paolo carga con su espada larga.
+      paolo ataca con espada larga: d20(11) + 9 = 20 vs CA 25 -> Falla.
+      paolo ataca con espada larga: d20(7) + 9 = 16 vs CA 25 -> Falla.
+    Turno de Tarrasca:
+      Tarrasca usa Mordisco contra khufus: d20(19) + 19 = 38 vs CA 18 -> ¡Impacta! 33 de daño.
+      Tarrasca usa Mordisco contra paolo: d20(12) + 19 = 31 vs CA 18 -> ¡Impacta! 29 de daño.
+    ----- Ronda 5 -----
+    [khufus actúa como Explorador]
+    El Explorador khufus dispara su arco largo a la presa marcada.
+      khufus ataca con arco largo: d20(1) + 9 = 10 vs CA 25 -> ¡Pifia! Falla automáticamente.
+      khufus ataca con arco largo: d20(4) + 9 = 13 vs CA 25 -> Falla.
+    [aa actúa como Explorador]
+    El Explorador aa dispara su arco largo a la presa marcada.
+      aa ataca con arco largo: d20(5) + 9 = 14 vs CA 25 -> Falla.
+      aa ataca con arco largo: d20(4) + 9 = 13 vs CA 25 -> Falla.
+    [paolo actúa como Guerrero]
+    El Guerrero paolo ataca con su espada larga.
+      paolo ataca con espada larga: d20(13) + 9 = 22 vs CA 25 -> Falla.
+      paolo ataca con espada larga: d20(9) + 9 = 18 vs CA 25 -> Falla.
+    Turno de Tarrasca:
+      Tarrasca usa Mordisco contra aa: d20(20) + 19 = 39 vs CA 18 -> ¡CRÍTICO! 56 de daño.
+      Tarrasca usa Garra contra aa: d20(11) + 19 = 30 vs CA 18 -> ¡Impacta! 33 de daño.
+      aa ha caído.
+    ----- Ronda 6 -----
+    [khufus actúa como Guerrero]
+    El Guerrero khufus ataca con su espada larga.
+      khufus ataca con espada larga: d20(13) + 9 = 22 vs CA 25 -> Falla.
+      khufus ataca con espada larga: d20(1) + 9 = 10 vs CA 25 -> ¡Pifia! Falla automáticamente.
+    [paolo actúa como Monje]
+    El Monje paolo gasta puntos de Ki para ejecutar una Ráfaga de Golpes y un Ataque Aturdidor. (Ki restante: 0)
+      paolo ataca con golpe sin armas: d20(1) + 9 = 10 vs CA 25 -> ¡Pifia! Falla automáticamente.
+      paolo ataca con golpe sin armas: d20(16) + 9 = 25 vs CA 25 -> ¡Acierta! 3 de daño.
+      paolo ataca con golpe sin armas: d20(13) + 9 = 22 vs CA 25 -> Falla.
+      paolo ataca con golpe sin armas: d20(12) + 9 = 21 vs CA 25 -> Falla.
+    Turno de Tarrasca:
+      Tarrasca usa Cola contra paolo: d20(2) + 19 = 21 vs CA 18 -> ¡Impacta! 26 de daño.
+      paolo ha caído.
+      Tarrasca usa Mordisco contra khufus: d20(18) + 19 = 37 vs CA 18 -> ¡Impacta! 34 de daño.
+      khufus ha caído.
+    DERROTA... todo el grupo ha caído ante Tarrasca.
+COMBATE|2026-11-19 02:12:26|Goblin|VICTORIA
+    ¡Comienza el combate contra Goblin!
+    Iniciativa (1d20): juancito 19, khufus 12, paolo 11, aa 5, Goblin 22
+    ¡Goblin inicia el combate!
+    ----- Ronda 1 -----
+    Turno de Goblin:
+      Goblin usa Cimitarra contra juancito: d20(15) + 4 = 19 vs CA 14 -> ¡Impacta! 8 de daño.
+    [juancito actúa como Guerrero]
+    El Guerrero juancito usa Oleada de Acción para realizar múltiples ataques físicos continuos.
+      juancito ataca con espada larga: d20(18) + 9 = 27 vs CA 15 -> ¡Acierta! 4 de daño.
+      juancito ataca con espada larga: d20(5) + 9 = 14 vs CA 15 -> Falla.
+      juancito ataca con espada larga: d20(15) + 9 = 24 vs CA 15 -> ¡Acierta! 4 de daño.
+    ¡VICTORIA! Goblin ha sido derrotado.
+COMBATE|2026-11-19 02:12:29|Ogro|VICTORIA
+    ¡Comienza el combate contra Ogro!
+    Iniciativa (1d20): juancito 8, khufus 13, paolo 7, aa 10, Ogro 13
+    ¡Ogro inicia el combate!
+    ----- Ronda 1 -----
+    Turno de Ogro:
+      Ogro usa Gran garrote contra paolo: d20(18) + 6 = 24 vs CA 18 -> ¡Impacta! 8 de daño.
+    [khufus actúa como Guerrero]
+    El Guerrero khufus usa Oleada de Acción para realizar múltiples ataques físicos continuos.
+      khufus ataca con espada larga: d20(12) + 9 = 21 vs CA 11 -> ¡Acierta! 5 de daño.
+      khufus ataca con espada larga: d20(5) + 9 = 14 vs CA 11 -> ¡Acierta! 6 de daño.
+      khufus ataca con espada larga: d20(19) + 9 = 28 vs CA 11 -> ¡Acierta! 6 de daño.
+      khufus ataca con espada larga: d20(5) + 9 = 14 vs CA 11 -> ¡Acierta! 11 de daño.
+    [aa actúa como Explorador]
+    El Explorador aa aplica Marca del Cazador sobre el objetivo para maximizar su daño sostenido.
+      aa ataca con arco largo: d20(1) + 9 = 10 vs CA 11 -> ¡Pifia! Falla automáticamente.
+      aa ataca con arco largo: d20(18) + 9 = 27 vs CA 11 -> ¡Acierta! 13 de daño.
+    [juancito actúa como Pícaro]
+    El Pícaro juancito aprovecha la ventaja táctica para asestar un Ataque Furtivo masivo y se reposiciona.
+      juancito ataca con estoque: d20(13) con ventaja + 9 = 22 vs CA 11 -> ¡Acierta! 18 de daño.
+    ¡VICTORIA! Ogro ha sido derrotado.
+COMBATE|2026-11-19 02:12:45|Dragón Rojo Joven|DERROTA
+    ¡Comienza el combate contra Dragón Rojo Joven!
+    Iniciativa (1d20): juancito 17, khufus 2, paolo 9, aa 1, Dragón Rojo Joven 19
+    ¡Dragón Rojo Joven inicia el combate!
+    ----- Ronda 1 -----
+    Turno de Dragón Rojo Joven:
+      ¡Dragón Rojo Joven exhala un cono de fuego sobre todo el grupo!
+      juancito salva a medias y recibe 24 de daño.
+      khufus falla la salvación y recibe 69 de daño.
+      paolo salva a medias y recibe 23 de daño.
+      aa falla la salvación y recibe 60 de daño.
+    [juancito actúa como Mago]
+    El Mago juancito sabe que Dragón Rojo Joven es inmune al fuego: gasta un espacio de conjuro para lanzar un poderoso Relámpago.
+      Dragón Rojo Joven falla la salvación (CD 17) y recibe 25 de daño. Espacios restantes: 1
+    [paolo actúa como Guerrero]
+    El Guerrero paolo usa Oleada de Acción para realizar múltiples ataques físicos continuos.
+      paolo ataca con espada larga: d20(5) + 9 = 14 vs CA 18 -> Falla.
+      paolo ataca con espada larga: d20(16) + 9 = 25 vs CA 18 -> ¡Acierta! 11 de daño.
+      paolo ataca con espada larga: d20(9) + 9 = 18 vs CA 18 -> ¡Acierta! 8 de daño.
+      paolo ataca con espada larga: d20(2) + 9 = 11 vs CA 18 -> Falla.
+    [khufus actúa como Paladín]
+    El Paladín khufus carga con su espada larga.
+      khufus ataca con espada larga: d20(14) + 9 = 23 vs CA 18 -> ¡Acierta! 11 de daño.
+    El Paladín khufus consume magia para imbuir su arma con un Castigo Divino de daño radiante.
+      +15 de daño radiante.
+      khufus ataca con espada larga: d20(19) + 9 = 28 vs CA 18 -> ¡Acierta! 4 de daño.
+    [aa actúa como Paladín]
+    El Paladín aa carga con su espada larga.
+      aa ataca con espada larga: d20(19) + 9 = 28 vs CA 18 -> ¡Acierta! 4 de daño.
+    El Paladín aa consume magia para imbuir su arma con un Castigo Divino de daño radiante.
+      +14 de daño radiante.
+      aa ataca con espada larga: d20(15) + 9 = 24 vs CA 18 -> ¡Acierta! 6 de daño.
+    ----- Ronda 2 -----
+    Turno de Dragón Rojo Joven:
+      (Sacó 6 en el d6: ¡su Aliento de Fuego se recargó!)
+      ¡Dragón Rojo Joven exhala un cono de fuego sobre todo el grupo!
+      juancito salva a medias y recibe 30 de daño. ¡Ha caído!
+      khufus falla la salvación y recibe 63 de daño. ¡Ha caído!
+      paolo salva a medias y recibe 27 de daño.
+      aa salva a medias y recibe 28 de daño.
+    [paolo actúa como Monje]
+    El Monje paolo gasta puntos de Ki para ejecutar una Ráfaga de Golpes y un Ataque Aturdidor. (Ki restante: 2)
+      paolo ataca con golpe sin armas: d20(3) + 9 = 12 vs CA 18 -> Falla.
+      paolo ataca con golpe sin armas: d20(10) + 9 = 19 vs CA 18 -> ¡Acierta! 7 de daño.
+      paolo ataca con golpe sin armas: d20(3) + 9 = 12 vs CA 18 -> Falla.
+      paolo ataca con golpe sin armas: d20(9) + 9 = 18 vs CA 18 -> ¡Acierta! 6 de daño.
+    [aa actúa como Guerrero]
+    El Guerrero aa usa Oleada de Acción para realizar múltiples ataques físicos continuos.
+      aa ataca con espada larga: d20(5) + 9 = 14 vs CA 18 -> Falla.
+      aa ataca con espada larga: d20(7) + 9 = 16 vs CA 18 -> Falla.
+      aa ataca con espada larga: d20(3) + 9 = 12 vs CA 18 -> Falla.
+      aa ataca con espada larga: d20(12) + 9 = 21 vs CA 18 -> ¡Acierta! 7 de daño.
+    ----- Ronda 3 -----
+    Turno de Dragón Rojo Joven:
+      Dragón Rojo Joven usa Mordisco contra aa: d20(12) + 10 = 22 vs CA 18 -> ¡Impacta! 26 de daño.
+      Dragón Rojo Joven usa Garra contra aa: d20(3) + 10 = 13 vs CA 18 -> Falla.
+      Dragón Rojo Joven usa Garra contra aa: d20(6) + 10 = 16 vs CA 18 -> Falla.
+    [paolo actúa como Clérigo]
+    El Clérigo paolo usa Canalizar Divinidad para curar a sus aliados y expulsar muertos vivientes.
+      aa recupera 24 PV gracias a dios.
+    [aa actúa como Pícaro]
+    El Pícaro aa aprovecha la ventaja táctica para asestar un Ataque Furtivo masivo y se reposiciona.
+      aa ataca con estoque: d20(13) con ventaja + 9 = 22 vs CA 18 -> ¡Acierta! 19 de daño.
+    ----- Ronda 4 -----
+    Turno de Dragón Rojo Joven:
+      (Sacó 6 en el d6: ¡su Aliento de Fuego se recargó!)
+      ¡Dragón Rojo Joven exhala un cono de fuego sobre todo el grupo!
+      paolo falla la salvación y recibe 62 de daño. ¡Ha caído!
+      aa falla la salvación y recibe 55 de daño.
+    [aa actúa como Explorador]
+    El Explorador aa dispara su arco largo a la presa marcada.
+      aa ataca con arco largo: d20(3) + 9 = 12 vs CA 18 -> Falla.
+      aa ataca con arco largo: d20(13) + 9 = 22 vs CA 18 -> ¡Acierta! 10 de daño.
+    ----- Ronda 5 -----
+    Turno de Dragón Rojo Joven:
+      Dragón Rojo Joven usa Mordisco contra aa: d20(11) + 10 = 21 vs CA 18 -> ¡Impacta! 16 de daño.
+      Dragón Rojo Joven usa Garra contra aa: d20(9) + 10 = 19 vs CA 18 -> ¡Impacta! 9 de daño.
+      Dragón Rojo Joven usa Garra contra aa: d20(6) + 10 = 16 vs CA 18 -> Falla.
+    [aa actúa como Paladín]
+    El Paladín aa carga con su espada larga.
+      aa ataca con espada larga: d20(7) + 9 = 16 vs CA 18 -> Falla.
+      aa ataca con espada larga: d20(14) + 9 = 23 vs CA 18 -> ¡Acierta! 5 de daño.
+    El Paladín aa consume magia para imbuir su arma con un Castigo Divino de daño radiante.
+      +6 de daño radiante.
+    ----- Ronda 6 -----
+    Turno de Dragón Rojo Joven:
+      Dragón Rojo Joven usa Mordisco contra aa: d20(7) + 10 = 17 vs CA 18 -> Falla.
+      Dragón Rojo Joven usa Garra contra aa: d20(17) + 10 = 27 vs CA 18 -> ¡Impacta! 12 de daño.
+      aa ha caído.
+    DERROTA... todo el grupo ha caído ante Dragón Rojo Joven.

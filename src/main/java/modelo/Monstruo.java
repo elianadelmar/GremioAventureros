@@ -5,7 +5,7 @@ import java.util.List;
 
 /**
  * Monstruo enemigo. Datos del SRD de D&D 5e (dnd5eapi.co). y ps
- * Campana: 1 Goblin -> 2 Ogro -> 3 Dragon Rojo Joven -> 4 Tarrasca (secreta ñeñeñe shhhh).
+ * Campana: 1 Goblin -> 2 Ogro -> 3 Dragon Rojo Joven -> 4 Tarrasca (secreta: solo con 4 Leyendas).
  */
 public class Monstruo {
 

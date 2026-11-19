@@ -1,7 +1,7 @@
 package modelo;
 
 /**
- * Excepcion propia que se lanza cuando el usuario ingresa datos invalidos.
+ * excepcion propia que se lanza cuando el usuario ingresa datos invalidos.
  */
 public class DatosInvalidosException extends Exception {
 

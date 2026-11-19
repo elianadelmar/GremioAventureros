@@ -24,7 +24,7 @@ public class GremioAventureros {
         java.awt.EventQueue.invokeLater(() -> new ControladorGremio().iniciar());
     }
 
-    /** REPORTE 1: cuantos aventureros hay de cada clase (los multiclase cuentan en cada una lol). */
+    /** REPORTE 1: cuantos aventureros hay de cada clase (los multiclase cuentan en cada una de sus clases). */
     public static String reporteCantidadPorClase(List<Aventurero> lista) {
         Map<String, Integer> conteo = new LinkedHashMap<>();
         for (Aventurero a : lista) {
@@ -46,7 +46,7 @@ public class GremioAventureros {
         return sb.toString();
     }
 
-    /** REPORTE 2: el/los aventurero(s) de mayor nivel :v. */
+    /** REPORTE 2: el/los aventurero(s) de mayor nivel. */
     public static String reporteMayorNivel(List<Aventurero> lista) {
         StringBuilder sb = new StringBuilder("=== Reporte 2: Aventurero(s) de mayor nivel ===\n");
         if (lista.isEmpty()) {
