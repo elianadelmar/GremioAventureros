@@ -10,6 +10,8 @@ import modelo.FabricaAventureros;
 import modelo.Monstruo;
 import modelo.Multiclase;
 import modelo.ValidadorAventurero;
+import javax.swing.JOptionPane;
+import vista.VentanaInicio;
 
 /**
  * Controlador: conecta las vistas con el modelo.
@@ -28,12 +30,38 @@ public class ControladorGremio {
     private Combate combate;
     private int etapa = 0;
 
+    // ---------------- Vistas ----------------
+    private VentanaInicio vInicio;
+
     public ControladorGremio() {
         this(new ArchivoGremio());
     }
 
     public ControladorGremio(ArchivoGremio archivo) {
         this.archivo = archivo;
+    }
+
+    /** Abre la pantalla de inicio y conecta sus botones (enlazamiento de eventos en el controlador). */
+    public void iniciar() {
+        cargarGremio();
+        vInicio = new VentanaInicio();
+        vInicio.getBtnRegistrar().addActionListener(e -> abrirRegistro());
+        vInicio.getBtnVerGremio().addActionListener(e -> abrirGremio());
+        vInicio.getBtnCampania().addActionListener(e -> abrirCampania());
+        vInicio.setLocationRelativeTo(null);   // centrada en la pantalla
+        vInicio.setVisible(true);
+    }
+
+    private void abrirRegistro() {
+        JOptionPane.showMessageDialog(vInicio, "Pantalla de registro en construcción...");
+    }
+
+    private void abrirGremio() {
+        JOptionPane.showMessageDialog(vInicio, "El gremio tiene " + gremio.size() + " aventurero(s).");
+    }
+
+    private void abrirCampania() {
+        JOptionPane.showMessageDialog(vInicio, "Pantalla de campaña en construcción...");
     }
 
     /** Carga los aventureros guardados en registro_gremio.txt */
