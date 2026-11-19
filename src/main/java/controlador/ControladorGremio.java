@@ -1,8 +1,11 @@
 package controlador;
 
 import com.mycompany.gremioaventureros.GremioAventureros;
+import java.net.URL;
+import java.text.Normalizer;
 import java.util.ArrayList;
 import java.util.List;
+import javax.swing.ImageIcon;
 import javax.swing.JComboBox;
 import javax.swing.JFrame;
 import javax.swing.JOptionPane;
@@ -16,6 +19,7 @@ import modelo.FabricaAventureros;
 import modelo.Monstruo;
 import modelo.Multiclase;
 import modelo.ValidadorAventurero;
+import vista.VentanaCombate;
 import vista.VentanaGremio;
 import vista.VentanaInicio;
 import vista.VentanaRegistro;
@@ -41,6 +45,7 @@ public class ControladorGremio {
     private VentanaInicio vInicio;
     private VentanaRegistro vRegistro;
     private VentanaGremio vGremio;
+    private VentanaCombate vCombate;
 
     public ControladorGremio() {
         this(new ArchivoGremio());
@@ -60,6 +65,7 @@ public class ControladorGremio {
         vInicio = new VentanaInicio();
         vRegistro = new VentanaRegistro();
         vGremio = new VentanaGremio();
+        vCombate = new VentanaCombate();
 
         // Inicio
         vInicio.getBtnRegistrar().addActionListener(e -> abrirRegistro());
@@ -79,8 +85,13 @@ public class ControladorGremio {
         vGremio.getBtnCombatir().addActionListener(e -> empezarCombate());
         vGremio.getBtnVolver().addActionListener(e -> mostrar(vInicio));
 
+        // Combate
+        vCombate.getBtnSiguienteRonda().addActionListener(e -> jugarRonda());
+        vCombate.getBtnContinuar().addActionListener(e -> continuarCampania());
+        vCombate.getBtnVolver().addActionListener(e -> mostrar(vInicio));
+
         // Cerrar una ventana secundaria con la X devuelve al inicio
-        for (JFrame v : new JFrame[]{vRegistro, vGremio}) {
+        for (JFrame v : new JFrame[]{vRegistro, vGremio, vCombate}) {
             v.setDefaultCloseOperation(JFrame.DO_NOTHING_ON_CLOSE);
             v.addWindowListener(new java.awt.event.WindowAdapter() {
                 @Override
@@ -96,7 +107,7 @@ public class ControladorGremio {
 
     /** Muestra una pantalla y esconde las demas. */
     private void mostrar(JFrame ventana) {
-        for (JFrame v : new JFrame[]{vInicio, vRegistro, vGremio}) {
+        for (JFrame v : new JFrame[]{vInicio, vRegistro, vGremio, vCombate}) {
             if (v != ventana) {
                 v.setVisible(false);
             }
@@ -207,13 +218,100 @@ public class ControladorGremio {
         }
         int etapaInicial = vGremio.getCmbMonstruo().getSelectedIndex() + 1;
         try {
-            iniciarCampania(elegidos, etapaInicial);
-            JOptionPane.showMessageDialog(vGremio, "¡Grupo listo! La pantalla de combate está en construcción...");
+            List<String> lineas = iniciarCampania(elegidos, etapaInicial);
+            prepararPantallaCombate();
+            vCombate.getTxtBitacora().setText("");
+            escribir(lineas);
+            mostrar(vCombate);
         } catch (DatosInvalidosException ex) {
             JOptionPane.showMessageDialog(vGremio, ex.getMessage()
                     + "\n(Usa Ctrl + clic para seleccionar varios en la tabla)",
                     "No se puede combatir", JOptionPane.WARNING_MESSAGE);
         }
+    }
+
+    // =====================================================================
+    //  PANTALLA DE COMBATE (RF3)
+    // =====================================================================
+
+    private void prepararPantallaCombate() {
+        for (int i = 0; i < 4; i++) {
+            boolean usado = i < grupoCombate.size();
+            vCombate.getLblHeroes()[i].setVisible(usado);
+            vCombate.getBarHeroes()[i].setVisible(usado);
+            if (usado) {
+                Aventurero a = grupoCombate.get(i);
+                vCombate.getLblHeroes()[i].setText(a.getNombre());
+                vCombate.getLblHeroes()[i].setIcon(cargarSprite(a.getClaseParaSprite() + "_" + a.getGenero(), a.getClaseParaSprite(), "heroe"));
+                vCombate.getBarHeroes()[i].setMaximum(a.getPuntosVidaMax());
+                vCombate.getBarHeroes()[i].setStringPainted(true);
+            }
+        }
+        Monstruo m = combate.getMonstruo();
+        vCombate.getLblMonstruo().setText(m.getNombre());
+        vCombate.getLblMonstruo().setIcon(cargarSprite(m.getNombre()));
+        vCombate.getBarMonstruo().setMaximum(m.getPuntosVidaMax());
+        vCombate.getBarMonstruo().setStringPainted(true);
+        vCombate.getLblEtapa().setText(etapa == ETAPA_SECRETA ? "¡¡JEFE SECRETO!!" : "Etapa " + etapa + " de " + ETAPA_FINAL);
+        vCombate.getLblResultado().setText("");
+        vCombate.getBtnSiguienteRonda().setEnabled(true);
+        vCombate.getBtnContinuar().setEnabled(false);
+        actualizarBarras();
+    }
+
+    private void actualizarBarras() {
+        for (int i = 0; i < grupoCombate.size(); i++) {
+            Aventurero a = grupoCombate.get(i);
+            vCombate.getBarHeroes()[i].setValue(a.getPuntosVida());
+            vCombate.getBarHeroes()[i].setString(a.estaCaido() ? "Caído" : a.getPuntosVida() + " / " + a.getPuntosVidaMax());
+        }
+        Monstruo m = combate.getMonstruo();
+        vCombate.getBarMonstruo().setValue(m.getPuntosVida());
+        vCombate.getBarMonstruo().setString(m.getPuntosVida() + " / " + m.getPuntosVidaMax());
+    }
+
+    private void jugarRonda() {
+        escribir(siguienteRonda());
+        actualizarBarras();
+        if (combate.terminado()) {
+            vCombate.getBtnSiguienteRonda().setEnabled(false);
+            if (hayOtraEtapa()) {
+                vCombate.getLblResultado().setText("¡VICTORIA! Sigue el próximo enemigo...");
+                vCombate.getBtnContinuar().setEnabled(true);
+            } else if (campaniaGanada()) {
+                vCombate.getLblResultado().setText("¡LEYENDAS DEL GREMIO! Campaña completada");
+            } else {
+                vCombate.getLblResultado().setText("DERROTA... Vuelve al inicio para intentarlo de nuevo");
+            }
+        }
+    }
+
+    private void continuarCampania() {
+        escribir(avanzarEtapa());
+        prepararPantallaCombate();
+    }
+
+    private void escribir(List<String> lineas) {
+        for (String l : lineas) {
+            vCombate.getTxtBitacora().append(l + "\n");
+        }
+        vCombate.getTxtBitacora().setCaretPosition(vCombate.getTxtBitacora().getDocument().getLength());
+    }
+
+    /**
+     * Busca el primer sprite que exista en /imagenes/sprites/ (sin tildes, en minuscula).
+     * Ej: "mago_mujer" -> si no existe prueba "mago" -> si no existe prueba "heroe". Si nada existe, sin imagen.
+     */
+    private ImageIcon cargarSprite(String... nombres) {
+        for (String nombre : nombres) {
+            String archivoSprite = Normalizer.normalize(nombre, Normalizer.Form.NFD)
+                    .replaceAll("\\p{M}", "").toLowerCase().replace(" ", "_");
+            URL url = getClass().getResource("/imagenes/sprites/" + archivoSprite + ".png");
+            if (url != null) {
+                return new ImageIcon(url);
+            }
+        }
+        return null;
     }
 
     // =====================================================================

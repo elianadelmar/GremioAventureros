@@ -98,19 +98,19 @@ public class VentanaRegistro extends javax.swing.JFrame {
 
         txtNivel1.setColumns(4);
         txtNivel1.addActionListener(this::txtNivel1ActionPerformed);
-        jPanel1.add(txtNivel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(597, 136, -1, -1));
+        jPanel1.add(txtNivel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(600, 140, -1, -1));
 
         txtNivel2.setColumns(4);
         txtNivel2.addActionListener(this::txtNivel2ActionPerformed);
-        jPanel1.add(txtNivel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(597, 213, -1, -1));
+        jPanel1.add(txtNivel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(600, 180, -1, -1));
 
         txtNivel3.setColumns(4);
         txtNivel3.addActionListener(this::txtNivel3ActionPerformed);
-        jPanel1.add(txtNivel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(597, 178, -1, -1));
+        jPanel1.add(txtNivel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(600, 220, -1, -1));
 
         txtNivel4.setColumns(4);
         txtNivel4.addActionListener(this::txtNivel4ActionPerformed);
-        jPanel1.add(txtNivel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(597, 249, -1, -1));
+        jPanel1.add(txtNivel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(600, 250, -1, -1));
 
         cmbClase3.setFont(new java.awt.Font("Minecraft", 0, 12)); // NOI18N
         cmbClase3.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Ninguna", "Guerrero", "Mago", "Clérigo", "Monje", "Paladín", "Explorador", "Pícaro", "Bardo" }));
@@ -127,7 +127,7 @@ public class VentanaRegistro extends javax.swing.JFrame {
 
         jLabel4.setFont(new java.awt.Font("Minecraft", 0, 12)); // NOI18N
         jLabel4.setText("Nivel");
-        jPanel1.add(jLabel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(597, 116, 37, -1));
+        jPanel1.add(jLabel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(600, 120, 37, -1));
 
         jLabel5.setFont(new java.awt.Font("Minecraft", 0, 12)); // NOI18N
         jLabel5.setText("Clases");
@@ -159,7 +159,7 @@ public class VentanaRegistro extends javax.swing.JFrame {
         jLabel7.setText("Escribe el Atributo que pide cada clase --->");
         jPanel1.add(jLabel7, new org.netbeans.lib.awtextra.AbsoluteConstraints(490, 290, 373, -1));
 
-        getContentPane().add(jPanel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 960, 600));
+        getContentPane().add(jPanel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 20, 960, 600));
 
         pack();
     }// </editor-fold>//GEN-END:initComponents

@@ -65,11 +65,11 @@ public class VentanaGremio extends javax.swing.JFrame {
 
         btnCombatir.setFont(new java.awt.Font("Minecraft", 0, 12)); // NOI18N
         btnCombatir.setText("Combatir!");
-        getContentPane().add(btnCombatir, new org.netbeans.lib.awtextra.AbsoluteConstraints(480, 380, -1, -1));
+        getContentPane().add(btnCombatir, new org.netbeans.lib.awtextra.AbsoluteConstraints(480, 380, 100, -1));
 
         btnVolver.setFont(new java.awt.Font("Minecraft", 0, 12)); // NOI18N
         btnVolver.setText("Volver");
-        getContentPane().add(btnVolver, new org.netbeans.lib.awtextra.AbsoluteConstraints(330, 380, -1, -1));
+        getContentPane().add(btnVolver, new org.netbeans.lib.awtextra.AbsoluteConstraints(330, 380, 100, -1));
 
         jLabel2.setFont(new java.awt.Font("Minecraft", 0, 14)); // NOI18N
         jLabel2.setText("Selecciona 1 a 4 heroes (Ctrl+clic):");
