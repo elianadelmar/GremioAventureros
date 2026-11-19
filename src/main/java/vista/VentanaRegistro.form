@@ -437,11 +437,11 @@
             <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
               <Font name="Minecraft" size="10" style="0"/>
             </Property>
-            <Property name="text" type="java.lang.String" value="Copia estos textos que aparecen en la caja de texto de atributos --&gt;"/>
+            <Property name="text" type="java.lang.String" value="Escribe el Atributo que pide cada clase ---&gt;"/>
           </Properties>
           <Constraints>
             <Constraint layoutClass="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout" value="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout$AbsoluteConstraintsDescription">
-              <AbsoluteConstraints x="330" y="290" width="373" height="-1"/>
+              <AbsoluteConstraints x="490" y="290" width="373" height="-1"/>
             </Constraint>
           </Constraints>
         </Component>

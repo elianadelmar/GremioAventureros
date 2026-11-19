@@ -156,8 +156,8 @@ public class VentanaRegistro extends javax.swing.JFrame {
         jPanel1.add(lblAtributo4, new org.netbeans.lib.awtextra.AbsoluteConstraints(701, 273, 260, 20));
 
         jLabel7.setFont(new java.awt.Font("Minecraft", 0, 10)); // NOI18N
-        jLabel7.setText("Copia estos textos que aparecen en la caja de texto de atributos -->");
-        jPanel1.add(jLabel7, new org.netbeans.lib.awtextra.AbsoluteConstraints(330, 290, 373, -1));
+        jLabel7.setText("Escribe el Atributo que pide cada clase --->");
+        jPanel1.add(jLabel7, new org.netbeans.lib.awtextra.AbsoluteConstraints(490, 290, 373, -1));
 
         getContentPane().add(jPanel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 960, 600));
 

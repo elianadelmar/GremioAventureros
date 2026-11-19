@@ -7,6 +7,7 @@ import javax.swing.JComboBox;
 import javax.swing.JFrame;
 import javax.swing.JOptionPane;
 import javax.swing.JTextField;
+import javax.swing.table.DefaultTableModel;
 import modelo.ArchivoGremio;
 import modelo.Aventurero;
 import modelo.Combate;
@@ -15,6 +16,7 @@ import modelo.FabricaAventureros;
 import modelo.Monstruo;
 import modelo.Multiclase;
 import modelo.ValidadorAventurero;
+import vista.VentanaGremio;
 import vista.VentanaInicio;
 import vista.VentanaRegistro;
 
@@ -38,6 +40,7 @@ public class ControladorGremio {
     // ---------------- Vistas ----------------
     private VentanaInicio vInicio;
     private VentanaRegistro vRegistro;
+    private VentanaGremio vGremio;
 
     public ControladorGremio() {
         this(new ArchivoGremio());
@@ -56,6 +59,7 @@ public class ControladorGremio {
         cargarGremio();
         vInicio = new VentanaInicio();
         vRegistro = new VentanaRegistro();
+        vGremio = new VentanaGremio();
 
         // Inicio
         vInicio.getBtnRegistrar().addActionListener(e -> abrirRegistro());
@@ -71,12 +75,28 @@ public class ControladorGremio {
         vRegistro.getBtnGuardar().addActionListener(e -> guardarRegistro());
         vRegistro.getBtnVolver().addActionListener(e -> mostrar(vInicio));
 
+        // Gremio
+        vGremio.getBtnCombatir().addActionListener(e -> empezarCombate());
+        vGremio.getBtnVolver().addActionListener(e -> mostrar(vInicio));
+
+        // Cerrar una ventana secundaria con la X devuelve al inicio
+        for (JFrame v : new JFrame[]{vRegistro, vGremio}) {
+            v.setDefaultCloseOperation(JFrame.DO_NOTHING_ON_CLOSE);
+            v.addWindowListener(new java.awt.event.WindowAdapter() {
+                @Override
+                public void windowClosing(java.awt.event.WindowEvent e) {
+                    mostrar(vInicio);
+                }
+            });
+        }
+        vGremio.getTxtReportes().setEditable(false);
+
         mostrar(vInicio);
     }
 
     /** Muestra una pantalla y esconde las demas. */
     private void mostrar(JFrame ventana) {
-        for (JFrame v : new JFrame[]{vInicio, vRegistro}) {
+        for (JFrame v : new JFrame[]{vInicio, vRegistro, vGremio}) {
             if (v != ventana) {
                 v.setVisible(false);
             }
@@ -157,17 +177,43 @@ public class ControladorGremio {
     }
 
     // =====================================================================
-    //  PANTALLA DEL GREMIO (RF2) - temporal hasta disenar la ventana
+    //  PANTALLA DEL GREMIO (RF2)
     // =====================================================================
 
     private void abrirGremio() {
-        StringBuilder sb = new StringBuilder("Aventureros del gremio:\n\n");
+        DefaultTableModel modelo = new DefaultTableModel(
+                new Object[]{"Nombre", "Género", "Clase(s)", "Nivel", "PV", "CA", "Atributo especial"}, 0) {
+            @Override
+            public boolean isCellEditable(int fila, int columna) {
+                return false;
+            }
+        };
         for (Aventurero a : gremio) {
-            sb.append(a).append("\n");
+            modelo.addRow(new Object[]{a.getNombre(), a.getGenero(), a.getClase(), a.getNivel(),
+                a.getPuntosVidaMax(), a.getClaseArmadura(), a.getAtributoEspecial()});
         }
-        sb.append("\n").append(GremioAventureros.reporteCantidadPorClase(gremio))
-          .append("\n").append(GremioAventureros.reporteMayorNivel(gremio));
-        JOptionPane.showMessageDialog(vInicio, sb.toString(), "Gremio", JOptionPane.INFORMATION_MESSAGE);
+        vGremio.getTblGremio().setModel(modelo);
+        vGremio.getTxtReportes().setText(GremioAventureros.reporteCantidadPorClase(gremio)
+                + "\n" + GremioAventureros.reporteMayorNivel(gremio));
+        mostrar(vGremio);
+    }
+
+    private void empezarCombate() {
+        vGremio.getBtnCombatir().setSelected(false);
+        int[] filas = vGremio.getTblGremio().getSelectedRows();
+        List<Aventurero> elegidos = new ArrayList<>();
+        for (int f : filas) {
+            elegidos.add(gremio.get(f));
+        }
+        int etapaInicial = vGremio.getCmbMonstruo().getSelectedIndex() + 1;
+        try {
+            iniciarCampania(elegidos, etapaInicial);
+            JOptionPane.showMessageDialog(vGremio, "¡Grupo listo! La pantalla de combate está en construcción...");
+        } catch (DatosInvalidosException ex) {
+            JOptionPane.showMessageDialog(vGremio, ex.getMessage()
+                    + "\n(Usa Ctrl + clic para seleccionar varios en la tabla)",
+                    "No se puede combatir", JOptionPane.WARNING_MESSAGE);
+        }
     }
 
     // =====================================================================
